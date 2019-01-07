@@ -1,0 +1,73 @@
+= 学习npm
+//tag::meta[]
+xiayx <xiayouxue@hotmail.com>
+v1.0, 2019-01-07: SNAPSHOT
+:doctype: docbook
+:toc: left
+:numbered:
+:imagesdir: assets/images
+:sourcedir: src/main/java
+:resourcesdir: src/main/resources
+:testsourcedir: src/test/java
+:source-highlighter: highlightjs
+:coderay-linenums-mode: inline
+//end::meta[]
+
+npm是一个js模块包管理器。
+
+== 参考
+* https://www.npmjs.com/[官网^]
+* https://www.npmjs.cn/[中文文档^]
+
+== 命令行
+=== npm run-script
+* 语法：``npm run-script <command> [--silent] [-- <args>...]``
+* 别名：``npm run``
+* 解释：运行``package.json``中scripts下的脚本
+
+.相关别名
+* npm start：npm run-script start
+* npm stop：npm run-script stop
+* npm test：npm run-script test
+
+=== npm init
+创建一个package.json文件
+
+=== npm link
+参考 https://blog.csdn.net/juhaotian/article/details/78672390[npm link 命令的作用浅析]
+
+npm link命令通过链接目录和可执行文件，实现npm包命令的全局可执行。
+
+* 添加``bin/npmlinktest``文件
+* 运行``node bin/npmlinktest``
+* 在package.json中添加``"bin": "bin/npmlinktest"``
+* 运行``npm link``
+
+.npm link 输出
+----
+/usr/local/bin/learn-npm -> /usr/local/lib/node_modules/learn-npm/bin/npmlinktest
+/usr/local/lib/node_modules/learn-npm -> /Users/xiayx/Documents/Projects/learn-npm
+----
+
+直接在终端运行``$ learn-npm``
+
+=== npm install
+安装一个模块。
+
+.指定参数的情况下
+* 在node_modules目录下生成该模块
+* 在package.json的dependencies中生成该模块
+
+.不指定参数的情况下
+* 根据package.json的dependencies，在node_modules目录下生成所有依赖模块
+
+=== npm build
+这是由 npm link 命令和 npm install 命令组成的管道命令。
+
+== 关于node环境与浏览器环境
+npm模块运行于node环境，无法直接运行于浏览器环境。
+所以需要借助于webpack之类的打包工具，转换成可运行于浏览器环境的文件。
+
+你也可以借助于``requirejs``实现npm模块的无缝集成，
+即npm模块既可以运行于node环境，有可以运行于浏览器环境。
+

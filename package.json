@@ -1,0 +1,24 @@
+{
+  "name": "learn-npm",
+  "version": "1.0.0",
+  "description": "学习npm",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/peacetrue/learn-npm.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/peacetrue/learn-npm/issues"
+  },
+  "homepage": "https://github.com/peacetrue/learn-npm#readme",
+  "dependencies": {
+    "loadsh": "0.0.3"
+  },
+  "bin": "bin/npmlinktest"
+}
