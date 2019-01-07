@@ -34,7 +34,7 @@ npm是一个js模块包管理器。
 创建一个package.json文件
 
 === npm link
-参考 https://blog.csdn.net/juhaotian/article/details/78672390[npm link 命令的作用浅析]
+参考 https://blog.csdn.net/juhaotian/article/details/78672390[npm link 命令的作用浅析^]
 
 npm link命令通过链接目录和可执行文件，实现npm包命令的全局可执行。
 
